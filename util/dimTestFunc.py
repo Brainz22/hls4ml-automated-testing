@@ -157,8 +157,9 @@ def dimTestFunc(config, specsDict, test, outdir, kmodel, X_train):
             #if l == j:
             #    i += 1 
             #    break #################### Safety for width loop
-                 
-            if j != l: # meaning I synthesis report was found and can check a step up
+
+            ```Note j and l both store the width, but only increase l when elif synth == failed.```            
+            if j != l: # meaning the synthesis report was not found, i.e. `elif synth == failed` above was used.
                 i += 1 #go up one step in height since we wanna break width loop
                 break # Means that report was not found, i.e. synth == "FAILED" 
 
